@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   # spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
   s.user_target_xcconfig   = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.vendored_framework = 'UbiXAdSDK.framework'
+  s.dependency 'UBiXDaq', '~> 2.3.1'
   # s.resources   = ['Images/*.png', 'Sounds/*']
 end
 
