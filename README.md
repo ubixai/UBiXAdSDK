@@ -1,7 +1,7 @@
 
 ## UBiX - 天璇SDK
 
-UBiXMerakSDK for iOS
+UBiX天璇联盟/自有预算SDK - iOS
 
 [数据和算法驱动的数字化广告交易平台](https://www.ubixai.com/product/ssp) · [关于我们](https://www.ubixai.com/company?tab=About)
 
@@ -36,4 +36,4 @@ pod install 或者 pod update
 MIT License
 
 ### 问题反馈
-[Issues](https://github.com/ubixai/UBiXMerakSDK/issues/new) · [Email](mailto:pub.dev@ubixai.com)
+[Issues](https://github.com/ubixai/UBiXAdSDK/issues/new) · [Email](mailto:pub.dev@ubixai.com)
