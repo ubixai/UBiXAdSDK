@@ -36,4 +36,4 @@ pod install 或者 pod update
 MIT License
 
 ### 问题反馈
-[Issues](https://github.com/ubixai/UBiXAdSDK/issues/new) · [Email](mailto:pub.dev@ubixai.com)
+[Issues](https://github.com/ubixai/UBiXMerakSDK/issues/new) · [Email](mailto:pub.dev@ubixai.com)
