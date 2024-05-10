@@ -1,7 +1,7 @@
 
 ## UBiX - 天璇SDK
 
-UBiXAdSDK for iOS
+UBiXMerakSDK for iOS
 
 [数据和算法驱动的数字化广告交易平台](https://www.ubixai.com/product/ssp) · [关于我们](https://www.ubixai.com/company?tab=About)
 
@@ -22,7 +22,7 @@ platform :ios, '9.0'
 
 target 'Your_Target' do
 # UBiX 天璇SDK
-	pod 'UBiXAdSDK'
+	pod 'UBiXMerakSDK'
 end
 ```
 
