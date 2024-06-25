@@ -24,6 +24,9 @@ typedef NS_ENUM(int, UBiXUserGender) {
 @property (nonatomic, assign, getter = isCanUseLocation) BOOL canUseLocation;
 /// 是否允许使用IDFA。(默认YES)
 @property (nonatomic, assign, getter = isCanUseDeviceId) BOOL canUseDeviceId;
+/// 是否允许使用IP信息。(默认YES)
+@property (nonatomic, assign, getter = isCanUseIPAddress)BOOL canUseIPAddress;
+
 /// 限制个性化广告。(默认NO)
 @property (nonatomic, assign, getter = isLimitPersonalizedAds) BOOL limitPersonalizedAds;
 /// 限制程序化推荐广告。(默认NO)
