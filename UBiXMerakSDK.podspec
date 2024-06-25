@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name        = 'UBiXMerakSDK'
-  s.version     = '2.3.3'
+  s.version     = '2.3.4'
   s.license     = 'MIT'
   s.authors     = {'ubixai' => 'pub.dev@ubixai.com'}
   s.homepage    = 'https://github.com/ubixai/UBiXAdSDK'
   s.source      = { :git => 'https://github.com/ubixai/UBiXAdSDK.git', :tag => s.version.to_s}
-  s.summary     = 'Ad SDK for iOS.'
+  s.summary     = 'UBiX Merak Ad SDK for iOS.'
   s.description = 'UBiX Merak Ad SDK for iOS.'
   s.ios.deployment_target  = '9.0'
   # s.dependency 'AFNetworking', '~> 1.0'
