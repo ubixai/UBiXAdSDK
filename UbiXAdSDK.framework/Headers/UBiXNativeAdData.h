@@ -31,6 +31,10 @@
 @property (nonatomic, copy, readonly) NSString *coverImageUrl;
 /// 视频时长(s)
 @property (nonatomic, assign, readonly) float duration;
+/// 视频素材宽
+@property (nonatomic, assign, readonly) int width;
+/// 视频素材高
+@property (nonatomic, assign, readonly) int height;
 @end
 
 

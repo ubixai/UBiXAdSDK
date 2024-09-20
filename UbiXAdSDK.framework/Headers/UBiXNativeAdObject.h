@@ -15,9 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 @class UBiXNativeAdObject;
 @protocol UBiXNativeAdObjectDelegate <NSObject>
 /**
- * 广告展示: container展示时调用
+ * 广告展示成功: container展示时调用
  */
 - (void)ubixNativeAdObjectDidShow:(UBiXNativeAdObject *)nativeAdObject;
+
+/**
+ * 2.4.1新增
+ * 广告展示失败: 如isValid=NO时进行了广告展示。
+ */
+- (void)ubixNativeAdObjectFailedToShow:(UBiXNativeAdObject *)nativeAdObject withError:(NSError *)error;
 
 /**
  * 广告点击
@@ -37,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UBiXNativeAdObject : NSObject
 /// 广告素材数据
 @property (nonatomic, strong, readonly) UBiXNativeAdData *adData;
+
+/// 广告是否可用；应在container首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
+@property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
 /// 交互回调
 @property (nullable, nonatomic, weak) id <UBiXNativeAdObjectDelegate> delegate;

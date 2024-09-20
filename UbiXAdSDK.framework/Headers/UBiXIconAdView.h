@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ubixIconAdViewDidShow:(UBiXIconAdView *)iconAdView;
 
 /**
+ * 2.4.1新增
+ * 广告展示失败: 如isValid=NO时进行了广告展示。
+ */
+- (void)ubixIconAdViewFailedToShow:(UBiXIconAdView *)iconAdView withError:(NSError *)error;
+
+/**
  * 广告点击
  */
 - (void)ubixIconAdViewDidClick:(UBiXIconAdView *)iconAdView;
@@ -52,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UBiXIconAdView : UIView
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
+
+/// 广告是否可用；应在首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
+@property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
 /// 回调委托对象
 @property (nonatomic, weak) id<UBiXIconAdViewDelegate> delegate;

@@ -25,9 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ubixNativeExpressAdViewFailedToRender:(UBiXNativeExpressAdView *)nativeExpressAdView withError:(NSError *)error;
 
 /**
- *  广告展示完毕
+ *  广告展示成功
  */
 - (void)ubixNativeExpressAdViewDidShow:(UBiXNativeExpressAdView *)nativeExpressAdView;
+
+/**
+ * 2.4.1新增
+ * 广告展示失败: 如isValid=NO时进行了广告展示。
+ */
+- (void)ubixNativeExpressAdViewFailedToShow:(UBiXNativeExpressAdView *)nativeExpressAdView withError:(NSError *)error;
 
 /**
  *  广告点击回调
@@ -76,7 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UBiXNativeExpressAdView : UIView;
-/// 广告是否可用，渲染成功后为YES
+/// 广告是否可用；应在调用render前和首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
 /// 广告委托对象
