@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 视频播放器view
+ * 遮挡面积不得超过50%，否则影响播放。其子视图不计入遮挡
  */
 @interface UBiXNativeAdVideoView : UIView
 /// 视频回调代理

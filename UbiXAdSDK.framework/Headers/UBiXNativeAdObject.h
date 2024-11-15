@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告是否可用；应在container首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
+/// 是否支持摇一摇，YES时需开发者渲染摇一摇组件，并通过shakeOn/Off控制传感器监控
+@property (nonatomic, assign, readonly, getter=isSupportCustomShake) BOOL supportCustomShake;
+
 /// 交互回调
 @property (nullable, nonatomic, weak) id <UBiXNativeAdObjectDelegate> delegate;
 
@@ -55,8 +58,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 注册曝光容器和点击view
+ * @param clickableViews 可点击的views。开发者需设置userInteractionEnabled=YES
  */
 - (void)registerContainer:(__kindof UIView *)container clickableViews:(NSArray <__kindof UIView *> *)clickableViews;
+
+/**
+ * 注册曝光容器和点击view、点滑view
+ * @param clickableViews 可点击的views。开发者需设置userInteractionEnabled=YES
+ * @param slideViews 可响应滑动影响的views。开发者需设置userInteractionEnabled=YES
+ */
+- (void)registerContainer:(__kindof UIView *)container clickableViews:(NSArray <__kindof UIView *> *)clickableViews slideViews:(NSArray <__kindof UIView *> *)slideViews;
 
 /**
  * 注销view绑定
@@ -67,6 +78,18 @@ NS_ASSUME_NONNULL_BEGIN
  * 获取广告价格，单位(分)
  */
 - (NSInteger)eCPM;
+
+/**
+ * 开启监听传摇一摇，主线程调用
+ * 仅当supportCustomShake=YES时有效
+ */
+- (void)shakeOn;
+
+/**
+ * 关闭监听摇一摇，主线程调用
+ * 仅当supportCustomShake=YES时有效
+ */
+- (void)shakeOff;
 @end
 
 NS_ASSUME_NONNULL_END
