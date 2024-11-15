@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'UBiXMerakSDK'
-  s.version     = '2.4.1'
+  s.version     = '2.5.0'
   s.license     = 'MIT'
   s.authors     = {'ubixai' => 'pub.dev@ubixai.com'}
   s.homepage    = 'https://github.com/ubixai/UBiXAdSDK'
@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.description = 'UBiX Merak Ad SDK for iOS.'
   s.ios.deployment_target  = '9.0'
   # s.dependency 'AFNetworking', '~> 1.0'
-  s.frameworks  = 'Accelerate', 'AdSupport', 'AppTrackingTransparency', 'AudioToolbox', 'AVFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'ImageIO', 'QuartzCore', 'SafariServices', 'Security', 'StoreKit', 'SystemConfiguration', 'WebKit'
+  s.frameworks  = 'Accelerate', 'AdSupport', 'AppTrackingTransparency', 'AudioToolbox', 'AVFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'Foundation', 'ImageIO', 'QuartzCore', 'SafariServices', 'Security', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
   s.libraries   = ["z", "sqlite3"]
-  # spec.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  s.pod_target_xcconfig    = { 'OTHER_LDFLAGS' => '-lObjC' }
   s.user_target_xcconfig   = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.vendored_framework = 'UbiXAdSDK.framework'
   s.dependency 'UBiXDaq', '~> 2.3.1'
