@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -89,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 激励视频广告对象，需强持有
  */
-@interface UBiXRewardedVideoAd : NSObject
+@interface UBiXRewardedVideoAd : NSObject <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
 
@@ -122,7 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSInteger)eCPM;
 
-// ------ bidding ------ //
+// ------ server bidding ------ //
 /**
  * 获取bidding token
  * 需要在主线程获取，否则获取失败

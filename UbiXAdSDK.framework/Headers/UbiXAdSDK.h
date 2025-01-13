@@ -8,6 +8,7 @@
 #if __has_include(<UbiXAdSDK/UbiXAdSDK.h>)
 #import <UbiXAdSDK/UBiXAdSDKDefines.h>
 #import <UbiXAdSDK/UBiXAdSDKManager.h>
+#import <UbiXAdSDK/UBiXBiddingNoticeProtocol.h>
 #import <UbiXAdSDK/UBiXSplashAd.h>
 #import <UbiXAdSDK/UBiXNativeExpressAd.h>
 #import <UbiXAdSDK/UBiXNativeExpressAdView.h>
@@ -27,6 +28,7 @@
 #else
 #import "UBiXAdSDKDefines.h"
 #import "UBiXAdSDKManager.h"
+#import "UBiXBiddingNoticeProtocol.h"
 #import "UBiXSplashAd.h"
 #import "UBiXNativeExpressAd.h"
 #import "UBiXNativeExpressAdView.h"

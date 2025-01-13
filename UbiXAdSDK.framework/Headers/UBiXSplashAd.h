@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -65,9 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
  * 开屏广告对象，需强持有
  */
 @class UBiXAdReviewParams;
-@interface UBiXSplashAd : NSObject
+@interface UBiXSplashAd : NSObject <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
+
+/// 请求id
+@property (nonatomic, copy, readonly) NSString *requestId;
 
 /// 回调委托对象
 @property (nonatomic, weak) id<UBiXSplashAdDelegate> delegate;
@@ -107,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSInteger)eCPM;
 
-// ------ bidding ------ //
+// ------ server bidding ------ //
 /**
  * 获取bidding token
  * 需要在主线程获取，否则获取失败

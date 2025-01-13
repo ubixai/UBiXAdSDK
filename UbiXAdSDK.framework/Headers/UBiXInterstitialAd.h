@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -57,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ubixInterstitialAdDidFinishConversion:(UBiXInterstitialAd *)interstitialAd interactionType:(UBiXAdInteractionType)interactionType;
 @end
 
-@interface UBiXInterstitialAd : NSObject
+@interface UBiXInterstitialAd : NSObject <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
 
@@ -90,7 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSInteger)eCPM;
 
-// ------ bidding ------ //
+// ------ server bidding ------ //
 /**
  * 获取bidding token
  * 需要在主线程获取，否则获取失败

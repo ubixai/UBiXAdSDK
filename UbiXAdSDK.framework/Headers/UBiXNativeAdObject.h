@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
 #import "UBiXNativeAdData.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 2.4.1新增
  * 广告展示失败: 如isValid=NO时进行了广告展示。
+ * 无效的曝光。
  */
 - (void)ubixNativeAdObjectFailedToShow:(UBiXNativeAdObject *)nativeAdObject withError:(NSError *)error;
 
@@ -40,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 广告返回对象，需被强引用
  */
 //@class UBiXNativeAdData;
-@interface UBiXNativeAdObject : NSObject
+@interface UBiXNativeAdObject : NSObject <UBiXBiddingNoticeProtocol>
 /// 广告素材数据
 @property (nonatomic, strong, readonly) UBiXNativeAdData *adData;
 

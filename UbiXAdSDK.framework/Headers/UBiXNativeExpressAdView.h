@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 2.4.1新增
  * 广告展示失败: 如isValid=NO时进行了广告展示。
+ * 无效的曝光。
  */
 - (void)ubixNativeExpressAdViewFailedToShow:(UBiXNativeExpressAdView *)nativeExpressAdView withError:(NSError *)error;
 
@@ -81,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UBiXNativeExpressAdView : UIView;
+@interface UBiXNativeExpressAdView : UIView <UBiXBiddingNoticeProtocol>
 /// 广告是否可用；应在调用render前和首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 

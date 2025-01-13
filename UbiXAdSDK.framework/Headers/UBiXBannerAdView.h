@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
+#import "UBiXBiddingNoticeProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 2.4.1新增
  * 广告展示失败: 如isValid=NO时进行了广告展示。
+ * 无效的曝光。
  */
 - (void)ubixBannerAdViewFailedToShow:(UBiXBannerAdView *)bannerAdView withError:(NSError *)error;
 
@@ -53,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * banner广告对象，需被强引用
  */
-@interface UBiXBannerAdView : UIView
+@interface UBiXBannerAdView : UIView <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
 
@@ -85,7 +87,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)eCPM;
 
 /**
- * 释放广告资源，在不在使用banner时调用
+ * 在不在使用banner时调用
+ *   [bannerView removeFromSuperview];
+ *   [bannerView destoryAd]
  */
 - (void)destoryAd;
 @end
