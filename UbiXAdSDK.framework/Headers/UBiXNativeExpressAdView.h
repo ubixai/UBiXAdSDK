@@ -83,6 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@class UBiXAdReviewParams;
 @interface UBiXNativeExpressAdView : UIView <UBiXBiddingNoticeProtocol>
 /// 广告是否可用；应在调用render前和首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
@@ -95,6 +96,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// @required 用于打开落地页，确保ta当前无presentedVC，否则将无法打开落地页
 @property (nonatomic, weak) UIViewController *rootViewController;
+
+/// 创意素材
+@property (nonatomic, strong, readonly) UBiXAdReviewParams *reviewParams;
 
 /**
  * 渲染广告，请在渲染成功后再进行view的展示，否则将会显示空白页面或viewSize为CGSizeZero，也会影响曝光回调

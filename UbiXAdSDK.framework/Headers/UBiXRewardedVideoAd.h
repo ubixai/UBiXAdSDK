@@ -90,6 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 激励视频广告对象，需强持有
  */
+@class UBiXAdReviewParams;
 @interface UBiXRewardedVideoAd : NSObject <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
@@ -99,6 +100,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 当前广告是否有效，show前检查
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
+
+/// 创意素材
+@property (nonatomic, strong, readonly) UBiXAdReviewParams *reviewParams;
 
 /**
  *  构造方法

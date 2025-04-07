@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设置加载广告超时时长(秒)，默认为5秒
 @property (nonatomic, assign) NSTimeInterval tolerateTimeout;
 
-/// 素材审核用
+/// 创意素材
 @property (nonatomic, strong, readonly) UBiXAdReviewParams *reviewParams;
 /**
  *  构造方法

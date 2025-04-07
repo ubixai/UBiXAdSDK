@@ -57,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * icon广告对象，需被强引用
  */
+@class UBiXAdReviewParams;
 @interface UBiXIconAdView : UIView <UBiXBiddingNoticeProtocol>
 /// 当前广告的广告位id
 @property (nonatomic, copy, readonly) NSString *placementId;
@@ -69,6 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// @required 用于打开落地页，确保ta当前无presentedVC，否则将无法打开落地页
 @property (nonatomic, weak) UIViewController *rootViewController;
+
+/// 创意素材
+@property (nonatomic, strong, readonly) UBiXAdReviewParams *reviewParams;
 
 /**
  * 初始化

@@ -64,6 +64,9 @@ __attribute__((deprecated("It will be removed in a future version")))
  * 广告素材
  */
 @interface UBiXNativeAdData : NSObject
+/// 创意id 2.6.0新增
+@property (nonatomic, copy, readonly) NSString *creativeId;
+
 /// 广告标题
 @property (nonatomic, copy, readonly) NSString *title;
 
