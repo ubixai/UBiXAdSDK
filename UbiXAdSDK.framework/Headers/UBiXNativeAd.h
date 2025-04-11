@@ -37,6 +37,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 回调委托对象
 @property (nonatomic, weak) id<UBiXNativeAdDelegate> delegate;
 
+/** (可选)扩展参数，广告请求前设置
+ * key-value参照UBiXAdSDKDefines.h 中定义
+ *  传感器禁用状态：kUBiXAdExtraInfoKey_SensorDisabled : "0"-允许使用传感器 "1"-禁止使用传感器
+ */
+@property (nonatomic, strong) NSDictionary *extraInfo;
+
 /// 广告对象，在ubixNativeAdDidLoad回调后有值
 @property (nonatomic, strong, readonly, nullable) NSArray <UBiXNativeAdObject *> *nativeAdObjects;
 

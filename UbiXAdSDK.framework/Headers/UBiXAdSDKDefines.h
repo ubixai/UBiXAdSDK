@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 广告对象扩展参数：传感器禁用状态 "0"-允许 "1"-禁用
+static NSString *const kUBiXAdExtraInfoKey_SensorDisabled   =  @"ad_sensor_disabled";
+
 /// 交互类型
 typedef NS_ENUM(NSInteger, UBiXAdInteractionType) {
     UBiXAdInteractionTypeUnknown,        //unknown type

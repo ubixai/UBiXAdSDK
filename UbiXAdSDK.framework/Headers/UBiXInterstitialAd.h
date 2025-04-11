@@ -72,6 +72,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 创意素材
 @property (nonatomic, strong, readonly) UBiXAdReviewParams *reviewParams;
 
+/** (可选)扩展参数，广告请求前设置
+ * key-value参照UBiXAdSDKDefines.h 中定义
+ *  传感器禁用状态：kUBiXAdExtraInfoKey_SensorDisabled : "0"-允许使用传感器 "1"-禁止使用传感器
+ */
+@property (nonatomic, strong) NSDictionary *extraInfo;
+
 /**
  *  构造方法
  *  @param placementId 广告位ID
