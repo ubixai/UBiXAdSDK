@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'UBiXMerakSDK'
-  s.version     = '2.6.1.01'
+  s.version     = '2.6.2'
   s.license     = 'MIT'
   s.authors     = {'ubixai' => 'pub.dev@ubixai.com'}
   s.homepage    = 'https://github.com/ubixai/UBiXAdSDK'
