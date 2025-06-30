@@ -5,7 +5,7 @@
 //  Created by fei.li on 2022/10/17.
 //
 /**
- 隐私设置
+ 隐私设置，SDK初始化前设置
  */
 #import <Foundation/Foundation.h>
 
@@ -26,6 +26,8 @@ typedef NS_ENUM(int, UBiXUserGender) {
 @property (nonatomic, assign, getter = isCanUseDeviceId) BOOL canUseDeviceId;
 /// 是否允许使用IP信息。(默认YES)
 @property (nonatomic, assign, getter = isCanUseIPAddress)BOOL canUseIPAddress;
+/// 是否允许读取UA。(默认YES)
+@property (nonatomic, assign, getter = isCanUseUserAgent)BOOL canUseUserAgent;
 
 /// 限制个性化广告。(默认NO)
 @property (nonatomic, assign, getter = isLimitPersonalizedAds) BOOL limitPersonalizedAds;
@@ -37,6 +39,8 @@ typedef NS_ENUM(int, UBiXUserGender) {
 @property (nonatomic, assign) double customLongitude; // 经度
 // 当deviceId不允许获取时，可设置自定义idfa
 @property (nonatomic, copy) NSString *customIDFA;     // idfa
+// 当userAgent不允许获取时，可设置自定义ua
+@property (nonatomic, copy) NSString *customUserAgent;// ua
 
 /// 媒体侧的用户id
 @property (nonatomic, copy)   NSString *userId;

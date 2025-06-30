@@ -12,7 +12,7 @@
 #pragma mark - SDK Initialization
 
 /**
- * SDK 初始化接口，请在 app 初始化时调用。
+ * SDK 初始化接口，请在 app 初始化时调用，请勿频繁初始化。
  * @param appId - UbiX开发者后台创建的appId
  */
 + (void)initWithAppId:(NSString *)appId;
