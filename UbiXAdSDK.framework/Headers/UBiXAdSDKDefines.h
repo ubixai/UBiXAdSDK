@@ -41,4 +41,16 @@ typedef NS_ENUM(int, UBiXNativeAdType) {
     UBiXNativeAdType_RewardedVideo = 9, /// 激励视频
 };
 
+/// 自渲染跳转交互类型
+typedef NS_ENUM(NSInteger, UBiXNativeAdTriggerType) {
+    UBiXNativeAdTriggerType_Touch    = 0, /// 触屏点击
+    UBiXNativeAdTriggerType_Slide    = 1, /// 滑动
+    UBiXNativeAdTriggerType_Shake    = 2, /// 摇一摇
+};
+
+typedef NSString *UBiXNativeAdTriggerArgsKey;
+/// 按下时相对于交互view(如button)的坐标: NSValue
+FOUNDATION_EXTERN  UBiXNativeAdTriggerArgsKey const UBiXNativeAdTriggerArgsKey_DownPoint;      // (e.g.[NSValue valueWithCGPoint:CGPointMake(12.4, 53.0)];)
+/// 抬起时相对于交互view(如button)的坐标: NSValue
+FOUNDATION_EXTERN  UBiXNativeAdTriggerArgsKey const UBiXNativeAdTriggerArgsKey_UpPoint;        // (e.g.[NSValue valueWithCGPoint:CGPointMake(12.4, 53.0)];)
 NS_ASSUME_NONNULL_END

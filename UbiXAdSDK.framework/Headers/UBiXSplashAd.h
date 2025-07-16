@@ -16,7 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol UBiXSplashAdDelegate <NSObject>
 @optional
 /**
- *  广告请求成功，并且素材加载完成，在此选择调用showAd来展示广告
+ * 广告响应成功，即返回广告数据
+ */
+- (void)ubixSplashAdDidResponse:(UBiXSplashAd *)splashAd;
+
+/**
+ *  广告请求成功，并且素材加载完成，建议 在此选择调用showAd来展示广告
+ *  - 若在didResponse后调用showAd，此接口会被立即调用，此时不可在此再次调用show
  */
 - (void)ubixSplashAdDidLoad:(UBiXSplashAd *)splashAd;
 
@@ -93,6 +99,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  传感器禁用状态：kUBiXAdExtraInfoKey_SensorDisabled : "0"-允许使用传感器 "1"-禁止使用传感器
  */
 @property (nonatomic, strong) NSDictionary *extraInfo;
+
+/// 跳过时长(毫秒ms, 区间[3000, 30000])；默认5000，发起广告请求前设置有效
+@property (nonatomic, assign) int skipTime;
 
 /**
  *  构造方法

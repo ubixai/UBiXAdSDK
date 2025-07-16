@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UBiXAdSDKManager : NSObject
 
@@ -22,6 +23,11 @@
  */
 + (NSString *)SDKVersion;
 
+/**
+ * 设置全局模版广告logo，推荐比例22:10
+ * 请勿频繁更换
+ */
++ (void)setCustomLogoImage:(UIImage *)logoImage;
 
 @end
 

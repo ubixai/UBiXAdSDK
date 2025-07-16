@@ -18,6 +18,8 @@
 @property (nonatomic, assign, readonly) int width;
 /// 高
 @property (nonatomic, assign, readonly) int height;
+/// 素材id
+@property (nonatomic, copy, readonly) NSString *materialId;
 @end
 
 
@@ -35,6 +37,8 @@
 @property (nonatomic, assign, readonly) int width;
 /// 视频素材高
 @property (nonatomic, assign, readonly) int height;
+/// 素材id
+@property (nonatomic, copy, readonly) NSString *materialId;
 @end
 
 
@@ -82,6 +86,9 @@ __attribute__((deprecated("It will be removed in a future version")))
 /// 广告创意图标
 @property (nonatomic, copy, readonly) NSString *iconUrl;
 
+/// 包名
+@property (nonatomic, copy, readonly) NSString *packageName;
+
 /// 广告图片素材地址
 @property (nonatomic, strong, readonly) NSArray <NSString *>*imageUrls;
 
@@ -119,4 +126,13 @@ __attribute__((deprecated("It will be removed in a future version")))
 
 /// 权限声明
 @property (nonatomic, copy, readonly) NSString *permissionUrl;
+
+/// universal-link
+@property (nonatomic, copy, readonly) NSString *universalLinkUrl;
+
+/// deeplink
+@property (nonatomic, copy, readonly) NSString *deeplinkUrl;
+
+/// h5-url or appstore-url
+@property (nonatomic, copy, readonly) NSString *landingPageUrl;
 @end

@@ -49,6 +49,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告是否可用；应在container首次将要添加到屏幕上时，检查该状态，否则会产生曝光失败或无效曝光，影响收入
 @property (nonatomic, assign, readonly, getter=isValid) BOOL valid;
 
+/// 是否是摇一摇广告
+@property (nonatomic, assign, readonly) BOOL isShakeAd;
+
 /// 是否支持摇一摇，YES时需开发者渲染摇一摇组件，并通过shakeOn/Off控制传感器监控
 @property (nonatomic, assign, readonly, getter=isSupportCustomShake) BOOL supportCustomShake;
 
@@ -92,6 +95,16 @@ NS_ASSUME_NONNULL_BEGIN
  * 仅当supportCustomShake=YES时有效
  */
 - (void)shakeOff;
+
+/**
+ * 触发广告跳转
+ * @param type 交互类型
+ * @param view 交互的view(如按钮)
+ * @param args 交互参数 (key参考UBiXNativeAdTriggerArgsKey)
+ */
+- (void)executeInteractionWithType:(UBiXNativeAdTriggerType)type
+                              view:(__kindof UIView *)view
+                              args:(NSDictionary <UBiXNativeAdTriggerArgsKey, id>*)args;
 @end
 
 NS_ASSUME_NONNULL_END
