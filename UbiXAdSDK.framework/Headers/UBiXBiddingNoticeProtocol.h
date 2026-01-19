@@ -34,6 +34,20 @@ FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_UBiX;             // U
 FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_QM;               // 趣盟
 FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_JD;               // 京东
 FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_GM;               // gromore
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_iQIYI;            // 爱奇艺
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Tanx;             // TANX
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_YS;               // 优视
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Sigmob;           // sigmob
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_ZHY;              // 章鱼
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_RS;               // 瑞狮
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_iFLY;             // 讯飞
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_MS;               // 美数
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_WM;               // 旺脉
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_BZ;               // 倍孜
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Fancy;            // fancy
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Topon;            // topon
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Tobid;            // tobid
+FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_AMPS;             // amps
 FOUNDATION_EXTERN NSString *const kUBiXBiddingWinPlatform_Other;            // 其他
 
 

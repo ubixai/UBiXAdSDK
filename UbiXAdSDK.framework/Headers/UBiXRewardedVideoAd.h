@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UBiXAdSDKDefines.h"
 #import "UBiXBiddingNoticeProtocol.h"
+#import "UBiXRewardedVideoAdModel.h"
+#import "UBiXRewardedVideoAdVerifyResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -83,8 +85,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 广告激励发放
+ * @note 接入了服务端验证的，请使用带验证结果的接口
  */
 - (void)ubixRewardVideoAdDidRewardEffective:(UBiXRewardedVideoAd *)rewardedVideoAd;
+
+/**
+ * 广告激励发放及服务端验证结果回调（非服务端验证的也会回调）
+ * @note 执行顺序：优先回调此方法，若未实现则调用"ubixRewardVideoAdDidRewardEffective:"方法。为保障用户体验，开发者做好兜底处理
+ * @since 2.9.0
+ */
+- (void)ubixRewardedVideoAdDidRewardEffective:(UBiXRewardedVideoAd *)rewardedVideoAd
+                                 verifyResult:(UBiXRewardedVideoAdVerifyResult *)result;
 @end
 
 /**
@@ -110,11 +121,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) NSDictionary *extraInfo;
 
+/// 交易id，广告填充后有值（应用于服务端验证）；2.9.0新增
+@property (nonatomic, copy, readonly) NSString *transId;
+
 /**
  *  构造方法
  *  @param placementId 广告位ID
  */
 - (instancetype)initWithPlacementId:(NSString *)placementId;
+
+/**
+ * 构造方法 2.9.0新增
+ * @param placementId 广告位ID
+ * @param model       奖励模型相关信息
+ */
+- (instancetype)initWithPlacementId:(NSString *)placementId
+                 rewardedVideoModel:(UBiXRewardedVideoAdModel *)model;
 
 /**
  *  加载广告

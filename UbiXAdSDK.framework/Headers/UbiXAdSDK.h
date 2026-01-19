@@ -20,6 +20,8 @@
 #import <UbiXAdSDK/UBiXNativeAdVideoReporter.h>
 #import <UbiXAdSDK/UBiXInterstitialAd.h>
 #import <UbiXAdSDK/UBiXRewardedVideoAd.h>
+#import <UbiXAdSDK/UBiXRewardedVideoAdModel.h>
+#import <UbiXAdSDK/UBiXRewardedVideoAdVerifyResult.h>
 #import <UbiXAdSDK/UBiXBannerAdView.h>
 #import <UbiXAdSDK/UBiXIconAdView.h>
 #import <UbiXAdSDK/UBiXPrivacyConfig.h>
@@ -40,6 +42,8 @@
 #import "UBiXNativeAdVideoReporter.h"
 #import "UBiXInterstitialAd.h"
 #import "UBiXRewardedVideoAd.h"
+#import "UBiXRewardedVideoAdModel.h"
+#import "UBiXRewardedVideoAdVerifyResult.h"
 #import "UBiXBannerAdView.h"
 #import "UBiXIconAdView.h"
 #import "UBiXPrivacyConfig.h"

@@ -115,7 +115,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 
 /**
- *  展示开屏广告
+ *  展示开屏广告（必须主线程调用）
  *  @param window 展示开屏广告的UIWindow
  *  @param bottomView 开发者自定义底部logo，建议高度不超过屏幕高度的1/4
  *  曝光时，请确保window.rootViewController无presentedVC，否则影响广告展示、点击、落地页打开

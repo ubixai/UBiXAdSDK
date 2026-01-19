@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  构造方法
  *  @param placementId 广告位ID
+ *  @param adSize 期望的宽和高，需>0；最终广告view实际大小以expressAdView渲染成功后的为准
  */
 - (instancetype)initWithPlacementId:(NSString *)placementId adSize:(CGSize)adSize;
 
