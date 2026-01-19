@@ -18,7 +18,7 @@ gem install cocoapods
 ```  
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'Your_Target' do
 # UBiX 天璇SDK
