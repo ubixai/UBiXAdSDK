@@ -11,11 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(int, UBiXUserGender) {
-    UBiXUserGenderUnknown = 0,  // 未知
-    UBiXUserGenderMale    = 1,  // 男
-    UBiXUserGenderFemale  = 2,  // 女
-};
 
 @interface UBiXPrivacyConfig : NSObject
 /// 是否允许查询指定schema。(默认YES)
@@ -44,10 +39,6 @@ typedef NS_ENUM(int, UBiXUserGender) {
 
 /// 媒体侧的用户id
 @property (nonatomic, copy)   NSString *userId;
-/// 用户性别
-@property (nonatomic, assign) UBiXUserGender userGender;
-/// 用年龄
-@property (nonatomic, assign) int userAge;
 /// 用户兴趣标签
 @property (nonatomic, strong) NSArray<NSString *> *userInterests;
 /// 用户搜索词/关键词
