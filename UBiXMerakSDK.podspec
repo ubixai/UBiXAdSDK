@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'UBiXMerakSDK'
-  s.version     = '2.9.0.11'
+  s.version     = '2.10.0'
   s.license     = 'MIT'
   s.authors     = {'ubixai' => 'pub.dev@ubixai.com'}
   s.homepage    = 'https://github.com/ubixai/UBiXAdSDK'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig    = { 'OTHER_LDFLAGS' => '-lObjC' }
   s.user_target_xcconfig   = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.vendored_framework = 'UbiXAdSDK.framework'
-  s.dependency 'UBiXDaq', '~> 2.5.0'
+  s.dependency 'UBiXDaq', '~> 2.6.0'
   # s.resources   = ['Images/*.png', 'Sounds/*']
 end
 
