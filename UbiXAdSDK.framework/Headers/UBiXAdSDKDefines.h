@@ -23,6 +23,12 @@ typedef NS_ENUM(NSInteger, UBiXAdInteractionType) {
     UBiXAdInteractionTypeError           //can`t open landing page
 };
 
+/// 落地页类型
+typedef NS_ENUM(NSInteger, UBiXAdLandingType) {
+    UBiXAdLandingTypeNormal          = 0,   /// open webpage in-app
+    UBiXAdLandingTypeStoreProduct    = 1,   /// open download page in-app
+};
+
 /// 素材类型
 typedef NS_ENUM(NSInteger, UBiXAdMaterialType) {
     UBiXAdMaterialTypeUnknown        = 0, /// 未知

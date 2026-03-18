@@ -33,6 +33,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ubixNativeAdObjectDidClick:(UBiXNativeAdObject *)nativeAdObject;
 
 /**
+ * 应用内打开广告落地页（h5、store-page）
+ */
+- (void)ubixNativeAdObjectDidPresentDetail:(UBiXNativeAdObject *)nativeAdObject landingType:(UBiXAdLandingType)landingType;
+
+/**
+ * 应用内关闭广告落地页
+ */
+- (void)ubixNativeAdObjectDidDismissDetail:(UBiXNativeAdObject *)nativeAdObject landingType:(UBiXAdLandingType)landingType;
+
+/**
  *  广告转化完成
  */
 - (void)ubixNativeAdObjectDidFinishConversion:(UBiXNativeAdObject *)nativeAdObject interactionType:(UBiXAdInteractionType)interactionType;
