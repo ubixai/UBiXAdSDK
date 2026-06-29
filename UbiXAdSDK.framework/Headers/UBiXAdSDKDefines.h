@@ -54,6 +54,13 @@ typedef NS_ENUM(NSInteger, UBiXNativeAdTriggerType) {
     UBiXNativeAdTriggerType_Shake    = 2, /// 摇一摇
 };
 
+/// 自渲染广告行为转化类型
+typedef NS_ENUM(NSInteger, UBiXNativeAdActionType) {
+    UBiXNativeAdActionType_Unknown   = 0,   /// 未知
+    UBiXNativeAdActionType_Browse    = 1,   /// 浏览广告
+    UBiXNativeAdActionType_Download  = 2,   /// 下载广告
+};
+
 typedef NSString *UBiXNativeAdTriggerArgsKey;
 /// 按下时相对于交互view(如button)的坐标: NSValue
 FOUNDATION_EXTERN  UBiXNativeAdTriggerArgsKey const UBiXNativeAdTriggerArgsKey_DownPoint;      // (e.g.[NSValue valueWithCGPoint:CGPointMake(12.4, 53.0)];)

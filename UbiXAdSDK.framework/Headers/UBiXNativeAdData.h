@@ -89,8 +89,8 @@ __attribute__((deprecated("It will be removed in a future version")))
 /// 包名
 @property (nonatomic, copy, readonly) NSString *packageName;
 
-/// 广告图片素材地址
-@property (nonatomic, strong, readonly) NSArray <NSString *>*imageUrls;
+/// 广告图片素材地址，即将废弃：请使用`images`和`videoAdInfo`并结合`isVideoAd`属性来获取素材地址。
+@property (nonatomic, strong, readonly) NSArray <NSString *>*imageUrls __attribute__((deprecated("Useless. It will be removed in a future version")));
 
 /// 广告图片素材
 @property (nonatomic, strong, readonly) NSArray <UBiXNativeAdDataImage *>*images;
@@ -135,4 +135,7 @@ __attribute__((deprecated("It will be removed in a future version")))
 
 /// h5-url or appstore-url
 @property (nonatomic, copy, readonly) NSString *landingPageUrl;
+
+/// 行为转化目标类型。2.11.0新增
+@property (nonatomic, assign, readonly) UBiXNativeAdActionType actionType;
 @end

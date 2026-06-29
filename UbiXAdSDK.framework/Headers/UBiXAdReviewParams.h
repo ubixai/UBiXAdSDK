@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UBiXAdReviewParams : NSObject
 /// 是否是视频广告
 @property (nonatomic, assign) BOOL isVideoAd;
-/// 素材地址，注意nil/@[] 容错
-@property (nonatomic, strong, nullable) NSArray <NSString *> *mediaUrls;
+/// 素材地址，注意nil/@[] 容错。即将废弃：请使用`images`和`video`并结合`isVideoAd`属性来获取素材地址。
+@property (nonatomic, strong, nullable) NSArray <NSString *> *mediaUrls __attribute__((deprecated("Useless. It will be removed in a future version")));
 /// 创意id
 @property (nonatomic, copy  , nullable) NSString *creativeId;
 /// 标题
