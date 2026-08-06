@@ -1,0 +1,165 @@
+//
+//  UBiXNativeAdData.h
+//  UbiXAdSDK
+//
+//  Created by UbiX on 2021/7/13.
+//
+
+#import <Foundation/Foundation.h>
+#import "UBiXAdSDKDefines.h"
+
+/**
+ * 图片创意信息
+ */
+@interface UBiXNativeAdDataImage : NSObject
+/// 素材地址
+@property (nonatomic, copy, readonly) NSString *imageUrl;
+/// 宽
+@property (nonatomic, assign, readonly) int width;
+/// 高
+@property (nonatomic, assign, readonly) int height;
+/// 素材id
+@property (nonatomic, copy, readonly) NSString *materialId;
+@end
+
+
+/**
+ * 视频类创意信息
+ */
+@interface UBiXNativeAdDataVideoAdInfo : NSObject
+/// 视频素材地址
+@property (nonatomic, copy, readonly) NSString *videoUrl;
+/// 封面图地址
+@property (nonatomic, copy, readonly) NSString *coverImageUrl;
+/// 视频时长(s)
+@property (nonatomic, assign, readonly) float duration;
+/// 视频素材宽
+@property (nonatomic, assign, readonly) int width;
+/// 视频素材高
+@property (nonatomic, assign, readonly) int height;
+/// 素材id
+@property (nonatomic, copy, readonly) NSString *materialId;
+@end
+
+
+/**
+ * 下载类信息
+ */
+__attribute__((deprecated("It will be removed in a future version")))
+@interface UBiXNativeAdDataDownloadAdInfo : NSObject
+/// app名称
+@property (nonatomic, copy, readonly) NSString *name;
+/// app描述
+@property (nonatomic, copy, readonly) NSString *desc;
+/// 版本号
+@property (nonatomic, copy, readonly) NSString *version;
+/// 开发者
+@property (nonatomic, copy, readonly) NSString *publisher;
+/// 隐私链接
+@property (nonatomic, copy, readonly) NSString *privacyUrl;
+/// 权限链接
+@property (nonatomic, copy, readonly) NSString *permissionUrl;
+/// icon
+@property (nonatomic, copy, readonly) NSString *iconUrl;
+@end
+
+/**
+ * 优惠券信息
+ */
+@interface UBiXNativeAdDataCoupon : NSObject
+/**
+ * 优惠券类型（0-未知；1-无门槛；2-满减券；3-折扣券）
+ * 文案示例:
+ *   1-立减{amount}/100.0元
+ *   2-满{threshold}/100.0元减{amount}/100.0元
+ *   3-{amount}/10.0折优惠
+ */
+@property (nonatomic, assign, readonly) int       type;
+/// 优惠金额或折扣比例，单位(分、折扣比例)，如800(分)=8元，80(折扣比例)=8折
+@property (nonatomic, assign, readonly) int       amount;
+/// 门槛金额，单位(分)
+@property (nonatomic, assign, readonly) int       threshold;
+/// 过期时间戳(s秒)
+@property (nonatomic, assign, readonly) long long expiredTime;
+/// 扩展信息
+@property (nonatomic, copy, readonly) NSString   *extra;
+@end
+
+/**
+ * 广告素材
+ */
+@interface UBiXNativeAdData : NSObject
+/// 创意id 2.6.0新增
+@property (nonatomic, copy, readonly) NSString *creativeId;
+
+/// 广告标题
+@property (nonatomic, copy, readonly) NSString *title;
+
+/// 广告描述
+@property (nonatomic, copy, readonly) NSString *desc;
+
+/// 广告来源
+@property (nonatomic, copy, readonly) NSString *source;
+
+/// 按钮文案
+@property (nonatomic, copy, readonly) NSString *callToAction;
+
+/// 广告创意图标
+@property (nonatomic, copy, readonly) NSString *iconUrl;
+
+/// 包名
+@property (nonatomic, copy, readonly) NSString *packageName;
+
+/// 广告图片素材地址，即将废弃：请使用`images`和`videoAdInfo`并结合`isVideoAd`属性来获取素材地址。
+@property (nonatomic, strong, readonly) NSArray <NSString *>*imageUrls __attribute__((deprecated("Useless. It will be removed in a future version")));
+
+/// 广告图片素材
+@property (nonatomic, strong, readonly) NSArray <UBiXNativeAdDataImage *>*images;
+
+/// 是否是视频类广告
+@property (nonatomic, assign, readonly) BOOL isVideoAd;
+// @property (nonatomic, assign, getter=isVideoAd) BOOL videoAd;
+
+/// 视频类素材描述
+@property (nonatomic, strong, readonly) UBiXNativeAdDataVideoAdInfo *videoAdInfo;
+
+/// 是否下载类广告
+@property (nonatomic, assign, readonly) BOOL isDownloadAd __attribute__((deprecated("Useless. It will be removed in a future version")));
+//@property (nonatomic, assign, getter=isDownloadAd) BOOL downloadAd;
+
+/// 下载类信息描述
+@property (nonatomic, strong, readonly) UBiXNativeAdDataDownloadAdInfo *downloadAdInfo __attribute__((deprecated("Useless. It will be removed in a future version")));
+
+/// 优惠券信息。2.12.0新增
+@property (nonatomic, strong, readonly) UBiXNativeAdDataCoupon *coupon;
+
+/// 应用名称
+@property (nonatomic, copy, readonly) NSString *appName;
+
+/// 应用描述
+@property (nonatomic, copy, readonly) NSString *appDesc;
+
+/// 应用版本
+@property (nonatomic, copy, readonly) NSString *appVersion;
+
+/// 应用开发者
+@property (nonatomic, copy, readonly) NSString *appPublisher;
+
+/// 隐私协议
+@property (nonatomic, copy, readonly) NSString *privacyUrl;
+
+/// 权限声明
+@property (nonatomic, copy, readonly) NSString *permissionUrl;
+
+/// universal-link
+@property (nonatomic, copy, readonly) NSString *universalLinkUrl;
+
+/// deeplink
+@property (nonatomic, copy, readonly) NSString *deeplinkUrl;
+
+/// h5-url or appstore-url
+@property (nonatomic, copy, readonly) NSString *landingPageUrl;
+
+/// 行为转化目标类型。2.11.0新增
+@property (nonatomic, assign, readonly) UBiXNativeAdActionType actionType;
+@end

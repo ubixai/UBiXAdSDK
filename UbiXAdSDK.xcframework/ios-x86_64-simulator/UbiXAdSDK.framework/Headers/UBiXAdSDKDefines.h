@@ -1,0 +1,69 @@
+//
+//  Header.h
+//  UbiXAdSDK
+//
+//  Created by UbiX on 2021/10/22.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+/// 广告对象扩展参数：传感器禁用状态 "0"-允许 "1"-禁用
+static NSString *const kUBiXAdExtraInfoKey_SensorDisabled   =  @"ad_sensor_disabled";
+
+/// 交互类型
+typedef NS_ENUM(NSInteger, UBiXAdInteractionType) {
+    UBiXAdInteractionTypeUnknown,        //unknown type
+    UBiXAdInteractionTypeApp,            //open download page in-app
+    UBiXAdInteractionTypeWeb,            //open webpage in-app
+    UBiXAdInteractionTypeDeepLink,       //open deeplink
+    UBiXAdInteractionTypeAppStore,       //open appstore
+    UBiXAdInteractionTypeSafari,         //open safari
+    UBiXAdInteractionTypeError           //can`t open landing page
+};
+
+/// 落地页类型
+typedef NS_ENUM(NSInteger, UBiXAdLandingType) {
+    UBiXAdLandingTypeNormal          = 0,   /// open webpage in-app
+    UBiXAdLandingTypeStoreProduct    = 1,   /// open download page in-app
+};
+
+/// 素材类型
+typedef NS_ENUM(NSInteger, UBiXAdMaterialType) {
+    UBiXAdMaterialTypeUnknown        = 0, /// 未知
+    UBiXAdMaterialTypeSingleImage    = 1, /// 单图
+    UBiXAdMaterialTypeMultipleImages = 2, /// 多图
+    UBiXAdMaterialTypeVideo          = 3, /// 视频
+};
+
+/// 自渲染广告类型
+typedef NS_ENUM(int, UBiXNativeAdType) {
+    UBiXNativeAdType_Splash        = 1, /// 开屏
+    UBiXNativeAdType_Native        = 2, /// 信息流
+    UBiXNativeAdType_Icon          = 3, /// icon浮标
+    UBiXNativeAdType_Banner        = 4, /// banner
+    UBiXNativeAdType_Interstitial  = 6, /// 插屏
+    UBiXNativeAdType_RewardedVideo = 9, /// 激励视频
+};
+
+/// 自渲染跳转交互类型
+typedef NS_ENUM(NSInteger, UBiXNativeAdTriggerType) {
+    UBiXNativeAdTriggerType_Touch    = 0, /// 触屏点击
+    UBiXNativeAdTriggerType_Slide    = 1, /// 滑动
+    UBiXNativeAdTriggerType_Shake    = 2, /// 摇一摇
+};
+
+/// 自渲染广告行为转化类型
+typedef NS_ENUM(NSInteger, UBiXNativeAdActionType) {
+    UBiXNativeAdActionType_Unknown   = 0,   /// 未知
+    UBiXNativeAdActionType_Browse    = 1,   /// 浏览广告
+    UBiXNativeAdActionType_Download  = 2,   /// 下载广告
+};
+
+typedef NSString *UBiXNativeAdTriggerArgsKey;
+/// 按下时相对于交互view(如button)的坐标: NSValue
+FOUNDATION_EXTERN  UBiXNativeAdTriggerArgsKey const UBiXNativeAdTriggerArgsKey_DownPoint;      // (e.g.[NSValue valueWithCGPoint:CGPointMake(12.4, 53.0)];)
+/// 抬起时相对于交互view(如button)的坐标: NSValue
+FOUNDATION_EXTERN  UBiXNativeAdTriggerArgsKey const UBiXNativeAdTriggerArgsKey_UpPoint;        // (e.g.[NSValue valueWithCGPoint:CGPointMake(12.4, 53.0)];)
+NS_ASSUME_NONNULL_END
