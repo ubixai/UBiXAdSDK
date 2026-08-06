@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 1.0'
   s.frameworks  = 'Accelerate', 'AdSupport', 'AppTrackingTransparency', 'AudioToolbox', 'AVFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'Foundation', 'ImageIO', 'QuartzCore', 'SafariServices', 'Security', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
   s.libraries   = ["z", "sqlite3"]
-  s.pod_target_xcconfig    = { 'OTHER_LDFLAGS' => '-lObjC' }
+  s.pod_target_xcconfig    = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'OTHER_LDFLAGS' => '-lObjC'}
   s.user_target_xcconfig   = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.vendored_framework = 'UbiXAdSDK.xcframework'
   s.dependency 'UBiXDaq', '~> 2.8.0'
