@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.source      = { :git => 'https://github.com/ubixai/UBiXAdSDK.git', :tag => s.version.to_s}
   s.summary     = 'UBiX Merak Ad SDK for iOS.'
   s.description = 'UBiX 天璇广告SDK iOS端.'
-  s.ios.deployment_target  = '11.0'
+  s.ios.deployment_target  = '12.0'
   # s.dependency 'AFNetworking', '~> 1.0'
   s.frameworks  = 'Accelerate', 'AdSupport', 'AppTrackingTransparency', 'AudioToolbox', 'AVFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'Foundation', 'ImageIO', 'QuartzCore', 'SafariServices', 'Security', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
   s.libraries   = ["z", "sqlite3"]
