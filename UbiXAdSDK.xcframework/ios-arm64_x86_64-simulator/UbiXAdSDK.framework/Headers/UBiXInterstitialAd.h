@@ -97,6 +97,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAdFromRootViewController:(UIViewController *)rootViewController;
 
 /**
+ * 关闭广告
+ * 广告曝光后，开发者可以在适当时机选择关闭广告。
+ * 主线程调用，非曝光阶段调用无效
+ */
+- (void)closeAd;
+
+/**
  * 获取广告价格，单位(分)
  */
 - (NSInteger)eCPM;

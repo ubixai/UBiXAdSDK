@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)ubixSplashAdDidShow:(UBiXSplashAd *)splashAd;
 
 /**
- *  广告展示失败，未能正确显示在屏幕上: 如调用showAd时，window不是keywindow
+ *  广告展示失败，未能正确显示在屏幕上: 如调用showAd时，window不是keywindow；或window.hidden=YES等原因不可见
  *  @param error 失败原因
  */
 - (void)ubixSplashAdFailedToShow:(UBiXSplashAd *)splashAd withError:(NSError *)error;
@@ -116,7 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  展示开屏广告（必须主线程调用）
- *  @param window 展示开屏广告的UIWindow
+ *  @param window 展示开屏广告的UIWindow，需保证当前window的可见性
  *  @param bottomView 开发者自定义底部logo，建议高度不超过屏幕高度的1/4
  *  曝光时，请确保window.rootViewController无presentedVC，否则影响广告展示、点击、落地页打开
  */

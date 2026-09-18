@@ -53,16 +53,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) float duration;
 
 /// 播放
-- (void)play __attribute__((deprecated("Do nothing now, it will work in a future version")));
+- (void)play __attribute__((deprecated("Do nothing now, it will be removed in a future version")));
 
 /// 暂停
-- (void)pause __attribute__((deprecated("Do nothing now, it will work in a future version")));
+- (void)pause __attribute__((deprecated("Do nothing now, it will be removed in a future version")));
 
 /// 停止播放
-- (void)stop __attribute__((deprecated("Do nothing now, it will work in a future version")));
+- (void)stop __attribute__((deprecated("Do nothing now, it will be removed in a future version")));
 
 /// 重播
-- (void)replay __attribute__((deprecated("Do nothing now, it will work in a future version")));
+- (void)replay __attribute__((deprecated("Do nothing now, it will be removed in a future version")));
 @end
 
 NS_ASSUME_NONNULL_END
